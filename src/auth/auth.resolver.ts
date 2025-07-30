@@ -28,7 +28,7 @@ export class AuthResolver {
     async googleAuth(@Context() context: any): Promise<string> {
         console.log("googleAuth called");
         const clientId = process.env.GOOGLE_CLIENT_ID;
-        const redirectUri = "http://localhost:4000/auth/google/callback";
+        const redirectUri = "https://file-storage-api-production-eb22.up.railway.app/auth/google/callback";
         const scope = "email profile";
         const responseType = "code";
 
