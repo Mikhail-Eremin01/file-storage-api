@@ -42,7 +42,7 @@ export class AuthController {
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
 
-            res.redirect("http://localhost:5174");
+            res.redirect("https://localhost:5174");
         } catch (error) {
             throw new HttpException("Failed to authenticate with Google", HttpStatus.INTERNAL_SERVER_ERROR);
         }
