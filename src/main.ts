@@ -13,11 +13,11 @@ async function bootstrap() {
     app.use(graphqlUploadExpress({ maxFileSize: 1000000, maxFiles: 5 }));
 
     app.enableCors({
-        origin: "http://localhost:5173",
+        origin: "*",
         credentials: true,
     });
 
-    await app.listen(4000);
-    console.log("Application is running on: http://localhost:4000/graphql");
+    await app.listen(process.env.PORT || 4000);
+    console.log(`Application is running on: http://localhost:${process.env.PORT || 4000}/graphql`);
 }
 bootstrap();

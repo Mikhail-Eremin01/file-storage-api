@@ -23,33 +23,33 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/file-storage-backend.git
-   cd file-storage-backend
-   ```
+    ```bash
+    git clone https://github.com/your-username/file-storage-backend.git
+    cd file-storage-backend
+    ```
 
 2. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 
 3. Create a `.env` file in the root directory and configure the following environment variables:
 
-   ```env
-   # MongoDB
-   MONGO_URI=mongodb://localhost:27017/file-storage-db
+    ```env
+    # MongoDB
+    MONGO_URI=mongodb://localhost:27017/file-storage-db
 
-   # AWS S3
-   AWS_ACCESS_KEY_ID=your-access-key-id
-   AWS_SECRET_ACCESS_KEY=your-secret-access-key
-   AWS_REGION=your-region
-   AWS_BUCKET_NAME=your-bucket-name
+    # AWS S3
+    AWS_ACCESS_KEY_ID=your-access-key-id
+    AWS_SECRET_ACCESS_KEY=your-secret-access-key
+    AWS_REGION=your-region
+    AWS_BUCKET_NAME=your-bucket-name
 
-   # JWT
-   JWT_SECRET=your-jwt-secret
-   JWT_EXPIRES_IN=3600
-   ```
+    # JWT
+    JWT_SECRET=your-jwt-secret
+    JWT_EXPIRES_IN=3600
+    ```
 
 4. Ensure your MongoDB server is running and accessible at the `MONGO_URI` specified in the `.env` file.
 
@@ -59,36 +59,36 @@ Before you begin, ensure you have the following installed:
 
 1. For development mode:
 
-   ```bash
-   npm run start:dev
-   ```
+    ```bash
+    npm run start:dev
+    ```
 
 2. For production mode:
 
-   ```bash
-   npm run build
-   npm run start:prod
-   ```
+    ```bash
+    npm run build
+    npm run start:prod
+    ```
 
 ## Run Tests
 
 1. Run unit tests:
 
-   ```bash
-   npm run test
-   ```
+    ```bash
+    npm run test
+    ```
 
 2. Run end-to-end (e2e) tests:
 
-   ```bash
-   npm run test:e2e
-   ```
+    ```bash
+    npm run test:e2e
+    ```
 
 3. Check test coverage:
 
-   ```bash
-   npm run test:cov
-   ```
+    ```bash
+    npm run test:cov
+    ```
 
 ## API Documentation
 
@@ -107,15 +107,15 @@ To deploy the application to production:
 1. Ensure all environment variables are configured in the production environment.
 2. Build the project:
 
-   ```bash
-   npm run build
-   ```
+    ```bash
+    npm run build
+    ```
 
 3. Start the application:
 
-   ```bash
-   npm run start:prod
-   ```
+    ```bash
+    npm run start:prod
+    ```
 
 ## Resources
 
