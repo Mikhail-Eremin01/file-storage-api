@@ -102,14 +102,14 @@ export class AuthResolver {
 
             context.res.cookie("accessToken", newAccessToken, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
+                secure: false,
                 sameSite: "strict",
                 maxAge: 15 * 60 * 1000,
             });
 
             context.res.cookie("refreshToken", newRefreshToken, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
+                secure: false,
                 sameSite: "strict",
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
