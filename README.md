@@ -26,8 +26,8 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/file-storage-backend.git
-    cd file-storage-backend
+    git clone https://github.com/Mikhail-Eremin01/file-storage-api.git
+    cd file-storage-api
     ```
 
 2. Install dependencies:
