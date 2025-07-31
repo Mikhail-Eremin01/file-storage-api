@@ -3,20 +3,20 @@
 # ------------------------------------------------------
 
 type MeResponse {
-  authenticated: Boolean!
-  id: String
-  email: String
-  name: String
+    authenticated: Boolean!
+    id: String
+    email: String
+    name: String
 }
 
 type File {
-  id: ID!
-  name: String!
-  folderId: ID
-  ownerId: String!
-  url: String!
-  mimetype: String!
-  createdAt: DateTime!
+    id: ID!
+    name: String!
+    folderId: ID
+    ownerId: String!
+    url: String!
+    mimetype: String!
+    createdAt: DateTime!
 }
 
 """
@@ -25,46 +25,48 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type PathItem {
-  id: ID!
-  name: String!
+    id: ID!
+    name: String!
 }
 
 type Folder {
-  id: ID!
-  name: String!
-  parentId: ID
-  path: [PathItem!]!
-  ownerId: String!
-  createdAt: DateTime!
+    id: ID!
+    name: String!
+    parentId: ID
+    path: [PathItem!]!
+    ownerId: String!
+    createdAt: DateTime!
 }
 
 type ContentsResponse {
-  currentFolder: Folder
-  folders: [Folder!]!
-  files: [File!]!
+    currentFolder: Folder
+    folders: [Folder!]!
+    files: [File!]!
 }
 
 type Query {
-  getHello: String!
-  me: MeResponse!
-  getFolders(ownerId: String!): [Folder!]!
-  getContents(parentId: String, ownerId: String!, searchTerm: String): ContentsResponse!
+    getHello: String!
+    me: MeResponse!
+    getFolders(ownerId: String!): [Folder!]!
+    getContents(parentId: String, ownerId: String!, searchTerm: String): ContentsResponse!
 }
 
 type Mutation {
-  googleAuth: String!
-  logout: Boolean!
-  refresh: Boolean!
-  createFolder(name: String!, parentId: String, ownerId: String!): Folder!
-  deleteFolder(folderId: String!): Folder!
-  renameFolder(folderId: String!, oldName: String!, newName: String!): Folder!
-  cloneFolder(folderId: String!): Folder!
-  uploadFile(file: Upload!, folderId: String!, path: String!, ownerId: String!): File!
-  createBucket(bucketName: String!): String!
-  deleteFile(fileId: String!): String!
-  renameFile(fileId: String!, oldName: String!, newName: String!): File!
-  cloneFile(fileId: String!): File!
+    googleAuth: String!
+    logout: Boolean!
+    refresh: Boolean!
+    createFolder(name: String!, parentId: String, ownerId: String!): Folder!
+    deleteFolder(folderId: String!): Folder!
+    renameFolder(folderId: String!, oldName: String!, newName: String!): Folder!
+    cloneFolder(folderId: String!): Folder!
+    uploadFile(file: Upload!, folderId: String!, path: String!, ownerId: String!): File!
+    createBucket(bucketName: String!): String!
+    deleteFile(fileId: String!): String!
+    renameFile(fileId: String!, oldName: String!, newName: String!): File!
+    cloneFile(fileId: String!): File!
 }
 
-"""The `Upload` scalar type represents a file upload."""
+"""
+The `Upload` scalar type represents a file upload.
+"""
 scalar Upload

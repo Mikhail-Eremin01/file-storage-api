@@ -27,22 +27,22 @@ export class AuthController {
                 id: user.id,
                 email: user.email,
             });
-            
+
             res.cookie("accessToken", accessToken, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "none",
+                secure: process.env.NODE_ENV === "production",
+                sameSite: "lax",
                 maxAge: 15 * 60 * 1000,
             });
 
             res.cookie("refreshToken", refreshToken, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "none",
+                secure: process.env.NODE_ENV === "production",
+                sameSite: "lax",
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });
 
-            res.redirect("https://localhost:5174");
+            res.redirect("http://localhost:5174");
         } catch (error) {
             throw new HttpException("Failed to authenticate with Google", HttpStatus.INTERNAL_SERVER_ERROR);
         }

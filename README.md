@@ -21,6 +21,8 @@ Before you begin, ensure you have the following installed:
 
 ## Project Setup
 
+### Backend Setup
+
 1. Clone the repository:
 
     ```bash
@@ -34,7 +36,10 @@ Before you begin, ensure you have the following installed:
     npm install
     ```
 
-3. Create a `.env` file in the root directory and configure the following environment variables:
+3. **Environment Variables Configuration**:
+    - A `.env` file containing the required environment variables will be provided separately.
+    - You must place this `.env` file in the root directory of the project before starting the application.
+    - The `.env` file should include the following variables:
 
     ```env
     # MongoDB
@@ -55,73 +60,35 @@ Before you begin, ensure you have the following installed:
 
 5. Set up an AWS S3 bucket and configure the bucket name, region, and access keys in the `.env` file.
 
-## Compile and Run the Project
-
-1. For development mode:
+6. Start the backend server:
 
     ```bash
     npm run start:dev
     ```
 
-2. For production mode:
+    The server will be running at `http://localhost:4000`.
 
-    ```bash
-    npm run build
-    npm run start:prod
-    ```
-
-## Run Tests
-
-1. Run unit tests:
-
-    ```bash
-    npm run test
-    ```
-
-2. Run end-to-end (e2e) tests:
-
-    ```bash
-    npm run test:e2e
-    ```
-
-3. Check test coverage:
-
-    ```bash
-    npm run test:cov
-    ```
+---
 
 ## API Documentation
 
-Once the server is running, you can access the GraphQL Playground at:
+Once the backend server is running, you can access the GraphQL Playground at:
 
 ```
-http://localhost:3000/graphql
+http://localhost:4000/graphql
 ```
 
 Use this interface to explore and test the available APIs.
 
-## Deployment
-
-To deploy the application to production:
-
-1. Ensure all environment variables are configured in the production environment.
-2. Build the project:
-
-    ```bash
-    npm run build
-    ```
-
-3. Start the application:
-
-    ```bash
-    npm run start:prod
-    ```
+---
 
 ## Resources
 
 - [NestJS Documentation](https://docs.nestjs.com)
 - [AWS S3 Documentation](https://docs.aws.amazon.com/s3/index.html)
 - [MongoDB Documentation](https://www.mongodb.com/docs/)
+
+---
 
 ## License
 

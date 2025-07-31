@@ -28,7 +28,7 @@ export class AuthResolver {
     async googleAuth(@Context() context: any): Promise<string> {
         console.log("googleAuth called");
         const clientId = process.env.GOOGLE_CLIENT_ID;
-        const redirectUri = "https://file-storage-api-production-eb22.up.railway.app/auth/google/callback";
+        const redirectUri = "http://localhost:4000/auth/google/callback";
         const scope = "email profile";
         const responseType = "code";
 
@@ -102,14 +102,14 @@ export class AuthResolver {
 
             context.res.cookie("accessToken", newAccessToken, {
                 httpOnly: true,
-                secure: false,
+                secure: process.env.NODE_ENV === "production",
                 sameSite: "strict",
                 maxAge: 15 * 60 * 1000,
             });
 
             context.res.cookie("refreshToken", newRefreshToken, {
                 httpOnly: true,
-                secure: false,
+                secure: process.env.NODE_ENV === "production",
                 sameSite: "strict",
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             });

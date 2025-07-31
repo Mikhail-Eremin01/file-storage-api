@@ -54,7 +54,7 @@ export class AuthService {
     async handleGoogleCallback(code: string): Promise<{ id: string; email: string; name?: string; avatar?: string }> {
         const clientId = process.env.GOOGLE_CLIENT_ID;
         const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-        const redirectUri = "https://file-storage-api-production-eb22.up.railway.app/auth/google/callback";
+        const redirectUri = "http://localhost:4000/auth/google/callback";
 
         const tokenResponse = await axios.post("https://oauth2.googleapis.com/token", {
             code,
